@@ -1,0 +1,44 @@
+<!---reactive form-->
+<div class="container">
+  <div class="card mt-4">
+    <ng-content select="h1"></ng-content>
+    
+    <form [formGroup]="form">
+      <div class="form-group">
+        <input
+          formControlName="username"
+          type="text"
+          class="form-control mt-2"
+          placeholder="username"
+        />
+        <!---this is for validation...-->
+        <div
+          class="text-danger mt-2"
+          *ngIf="username.touched && username.invalid"
+        >
+          <p *ngIf="username.errors.required">Username is required</p>
+          <p *ngIf="username.errors.minlength">
+            username should be minimum 3 chaterters
+          </p>
+          <p *ngIf="username.errors.pattern">Username name is not matching..</p>
+          <p *ngIf="username.errors.pleaseDontGivewhiteSpace">
+            Username cannot contain Space</p>
+        </div>
+        <!-----end of validation block-->
+      </div>
+
+      <div class="form-group">
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control mt-2"
+          placeholder="password"
+        />
+      </div>
+
+    <ng-content select="button"></ng-content>
+    <ng-content select="div"></ng-content>
+    
+    </form>
+  </div>
+</div>

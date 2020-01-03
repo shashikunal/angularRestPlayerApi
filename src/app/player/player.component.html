@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="col-md-8 offset-2 mt-2">
+    <div class="form-group">
+      <h1
+        class="display-5 mt-2 text-uppercase text-success
+       text-center font-weight-bold"
+      >
+        Find Players
+      </h1>
+      <input
+        type="text"
+        class="form-control bg-light"
+        placeholder="Search cricket Players😃"
+        #player
+        (keyup.enter)="searchPlayer(player.value)"
+      />
+    </div>
+  </div>
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item mt-2">
+        <p>
+          <img
+            class="img-fluid rounded-circle"
+            src="{{ playerInfo.imageURL }}"
+          />
+        </p>
+        <h1
+          class="text-uppercase
+        display-5 font-weight-bold"
+        >
+          {{ playerInfo.fullName }}
+        </h1>
+        <p class="float-right badge badge-danger">
+          {{ playerInfo.currentAge }}
+        </p>
+        <p class="badge badge-dark">
+          <span>Player Id</span>{{ playerInfo.pid }}</p>
+        <p class="float-right badge badge-success">
+          {{ playerInfo.country }}</p>
+        <p>{{ playerInfo.profile }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
