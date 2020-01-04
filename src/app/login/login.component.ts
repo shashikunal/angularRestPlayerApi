@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-login",
@@ -6,13 +8,15 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  nodejsApiUrl = "http://localhost:2000/createPost";
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {}
-  getObj(username) {
-    console.log(username);
-  }
-  submit(form) {
-    console.log(form.value);
+
+  submit(form: NgForm) {
+    // console.log(form.value);
+    this.http.post(this.nodejsApiUrl, form.value).subscribe(data => {
+      console.log(data);
+    });
   }
 }

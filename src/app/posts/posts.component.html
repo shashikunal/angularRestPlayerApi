@@ -1,0 +1,38 @@
+<!-- <div class="container">
+  <input
+    type="text"
+    class="form-control mt-2"
+    placeholder="add Title"
+    #title
+    (keyup.enter)="createTitle(title)"
+  />
+
+  <ul class="list-group">
+    <li class="list-group-item mt-2" *ngFor="let post of posts">
+      <h1>{{ post.title }}</h1>
+      <button
+        class="btn btn-primary btn-sm float-right ml-1 mr-1"
+        (click)="updateTitle(post)"
+      >
+        Update
+      </button>
+
+      <button
+        class="btn btn-danger btn-sm float-right"
+        (click)="removeTitle(post)"
+      >
+        Remove
+      </button>
+    </li>
+  </ul>
+</div> -->
+
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item mt-2" *ngFor="let data of newPostData">
+      <h1>{{ data.title }}</h1>
+      <p>{{ data.details }}</p>
+      <p>{{ data.phone }}</p>
+    </li>
+  </ul>
+</div>

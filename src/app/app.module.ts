@@ -20,12 +20,14 @@ import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
 // import httpClientModule form @angular/common/http
 import { HttpClientModule } from "@angular/common/http";
 import { PlayerComponent } from "./player/player.component";
+import { PostsComponent } from "./posts/posts.component";
 
 const Router: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "findplayer", component: PlayerComponent },
+  { path: "posts", component: PostsComponent },
   { path: "**", component: PagenotfoundComponent }
 ];
 
@@ -43,7 +45,8 @@ const Router: Routes = [
     ContactComponent,
     HomeComponent,
     PagenotfoundComponent,
-    PlayerComponent
+    PlayerComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,

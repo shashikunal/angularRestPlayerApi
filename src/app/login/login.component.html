@@ -1,1 +1,41 @@
-<h1>login</h1>
+<div class="container mt-4">
+  <form
+    action="/createPost"
+    method="POST"
+    #form="ngForm"
+    (ngSubmit)="submit(form)"
+  >
+    <div>
+      <input
+        placeholder="add title"
+        type="text"
+        class="form-control mt-2"
+        ngModel
+        name="title"
+      />
+    </div>
+    <div>
+      <textarea
+        placeholder="add details"
+        class="form-control mt-2"
+        name="details"
+        ngModel
+        id=""
+        cols="30"
+        rows="10"
+      ></textarea>
+    </div>
+    <div>
+      <input
+        placeholder="phone number"
+        type="text"
+        name="phone"
+        ngModel
+        class="form-control mt-2"
+      />
+    </div>
+    <div>
+      <button class="btn btn-success mt-2">Submit</button>
+    </div>
+  </form>
+</div>
